@@ -100,7 +100,7 @@ static int get_config(DWORD *format, int *repeat, char *color)
         for (int i = 0; config_table[i].prefix; i++) {
             if (strncmp(buf, config_table[i].prefix, config_table[i].length) == 0) {
                 sscanf(buf + config_table[i].length, "%d", config_table[i].address);
-                continue;
+                break;
             }
         }
     }
