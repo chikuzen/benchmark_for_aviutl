@@ -63,7 +63,7 @@ static int generate_default_config()
     if (!config)
         return -1;
     fprintf(config, "# output_format - 0:RGB 1:YUY2 2:YC48\n"
-                    "output_format=0\n"
+                    "output_format=1\n"
                     "# repeat number of times\n"
                     "repeat=1\n");
     fclose(config);
@@ -151,14 +151,13 @@ BOOL func_output(OUTPUT_INFO *oip)
         time(&time_now);
 
         fprintf(output,
-                "date                   : %s"
-                "output colorspace      : %s\n"
-                "resolution             : %d x %d\n"
-                "frame size             : %d\n"
-                "frames                 : %d\n"
-                "total proc time(msec)  : %I64u\n"
-                "average proc rate(fps) : %.3f\n\n\n",
-                ctime(&time_now), color, oip->w, oip->h, oip->size, frames,
+                "date                      : %s"
+                "output colorspace         : %s\n"
+                "resolution(width x height): %d x %d\n"
+                "frames                    : %d\n"
+                "total proc time(msec)     : %I64u\n"
+                "average proc rate(fps)    : %.3f\n\n\n",
+                ctime(&time_now), color, oip->w, oip->h, frames,
                 elapsed / 1000, frames * 1000000.0 / elapsed);
 
         fclose(output);
