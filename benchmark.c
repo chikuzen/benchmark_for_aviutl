@@ -1,5 +1,5 @@
 /*
-Benchmark plugin for AviUtl ver. 0.0.1
+Benchmark plugin for AviUtl ver. 0.1.0
 
 The MIT License
 
