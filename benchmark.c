@@ -136,7 +136,7 @@ BOOL func_output(OUTPUT_INFO *oip)
         for (int n = 0; n < frames; n++) {
             if(oip->func_is_abort())
                 return FALSE;
-            oip->func_get_video_ex(n++, format);
+            oip->func_get_video_ex(n, format);
             oip->func_rest_time_disp(n, frames);
             oip->func_update_preview();
         }
